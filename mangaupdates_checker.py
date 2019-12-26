@@ -9,6 +9,8 @@ from requests.exceptions import HTTPError
 
 link = 'https://www.mangaupdates.com/releases.html'
 chrome_loc = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+page = urllib.request.urlopen(link).read().decode('utf-8')
+match = re.findall("56<", page)
 
 for url in [link]:
   try:
