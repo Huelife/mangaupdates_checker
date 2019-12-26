@@ -8,10 +8,10 @@ import requests
 from requests.exceptions import HTTPError
 
 #variables for website link, webbrowser, reading webpage, and re
-link = 'https://www.mangaupdates.com/releases.html'
+link = 'https://www.mangaupdates.com/releases.html?search=33&stype=series'
 chrome_loc = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
 page = urllib.request.urlopen(link).read().decode('utf-8')
-match = re.findall("56<", page)
+match = re.findall("967<", page)
 
 #if new chapter==true, attempt to open webpage
 if match is None or len(match) == 0: 
