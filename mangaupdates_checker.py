@@ -7,11 +7,13 @@ import re
 import requests
 from requests.exceptions import HTTPError
 
+#variables for website link, webbrowser, reading webpage, and re
 link = 'https://www.mangaupdates.com/releases.html'
 chrome_loc = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
 page = urllib.request.urlopen(link).read().decode('utf-8')
 match = re.findall("56<", page)
 
+#if new chapter==true, attempt to open webpage
 if match is None or len(match) == 0: 
   print('No new chapter...')
 else:
