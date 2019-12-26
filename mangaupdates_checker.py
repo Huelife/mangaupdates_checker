@@ -7,13 +7,13 @@ import re
 import requests
 from requests.exceptions import HTTPError
 
-#variables for website link, webbrowser, reading webpage, and re
-link = 'https://www.mangaupdates.com/releases.html?search=33&stype=series'
-link_02 = 'https://www.mangaupdates.com/releases.html?search=1568&stype=series'
+#variables for webbrowser, website link, reading webpage, and re
 chrome_loc = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
-page = urllib.request.urlopen(link).read().decode('utf-8')
+link_01 = 'https://www.mangaupdates.com/releases.html?search=33&stype=series'
+link_02 = 'https://www.mangaupdates.com/releases.html?search=1568&stype=series'
+page_01 = urllib.request.urlopen(link_01).read().decode('utf-8')
 page_02 = urllib.request.urlopen(link_02).read().decode('utf-8')
-match = re.findall("967<", page)
+match_01 = re.findall("967<", page_01)
 match_02 = re.findall("169<", page_02)
 
 #if new chapter==true, attempt to open webpage
