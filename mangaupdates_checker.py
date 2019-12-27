@@ -16,6 +16,16 @@ page_02 = urllib.request.urlopen(link_02).read().decode('utf-8')
 match_01 = re.findall("967<", page_01)
 match_02 = re.findall("169<", page_02)
 
+#grouping multiple links and matches in tuples
+link = {
+  0:link_01,
+  1:link_02,
+  }
+match = {
+  0:match_01,
+  1:match_02,
+  }
+
 #if new chapter==true, attempt to open webpage
 if match is None or len(match) == 0: 
   print('No new chapter...')
