@@ -50,3 +50,17 @@ for x in range(2):
         print('')
         webbrowser.get(chrome_loc).open_new_tab(link[x])
         #open link if no errors
+    elif link[x] == link_02:
+      print('Vinland Saga:')
+      try:
+        response = requests.get(link[x])
+        response.raise_for_status()
+      except HTTPError as http_err:
+        print(f'HTTP error occurred: {http_err}')
+      except Exception as err:
+        print(f'Other error occurred: {err}')
+      else:
+        print('New chapter is out!')
+        print('')
+        webbrowser.get(chrome_loc).open_new_tab(link[x])
+        #open link if no errors
