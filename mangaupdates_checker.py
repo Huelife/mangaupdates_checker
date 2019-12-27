@@ -35,17 +35,18 @@ for x in range(2):
       print('Vinland Saga:')
     print('No new chapter...')
     print('')
-    
-else:
-  print('New chapter is out!')
-  for url in [link]:
-    try:
-      response = requests.get(url)
-      response.raise_for_status()
-    except HTTPError as http_err:
-      print(f'HTTP error occurred: {http_err}')
-    except Exception as err:
-      print(f'Other error occurred: {err}')
-    else:
-      print('Success!')
-      webbrowser.get(chrome_loc).open_new_tab(link)  #open link if no errors
+  else:
+    if link[x] == link_01:
+      print('One Piece:')
+      try:
+        response = requests.get(link[x])
+        response.raise_for_status()
+      except HTTPError as http_err:
+        print(f'HTTP error occurred: {http_err}')
+      except Exception as err:
+        print(f'Other error occurred: {err}')
+      else:
+        print('New chapter is out!')
+        print('')
+        webbrowser.get(chrome_loc).open_new_tab(link[x])
+        #open link if no errors
