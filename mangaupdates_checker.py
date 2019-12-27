@@ -26,9 +26,16 @@ match = {
   1:match_02,
   }
 
-#if new chapter==true, attempt to open webpage
-if match is None or len(match) == 0: 
-  print('No new chapter...')
+#if new chapter == True, attempt to open webpage
+for x in range(2):
+  if match[x] is None or len(match[x]) == 0:
+    if link[x] == link_01:
+      print('One Piece:')    
+    elif link[x] == link_02:
+      print('Vinland Saga:')
+    print('No new chapter...')
+    print('')
+    
 else:
   print('New chapter is out!')
   for url in [link]:
