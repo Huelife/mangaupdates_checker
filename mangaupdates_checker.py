@@ -7,6 +7,12 @@ import re
 import requests
 from requests.exceptions import HTTPError
 
+class Manga():
+  manga_title = ""
+  
+  def __init__(self,title):
+    self.title = title
+
 #variables for webbrowser, website link, reading webpage, and re
 chrome_loc = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
 link_01 = 'https://www.mangaupdates.com/releases.html?search=33&stype=series'
