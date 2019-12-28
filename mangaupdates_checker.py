@@ -8,19 +8,22 @@ import requests
 from requests.exceptions import HTTPError
 
 class Manga():
-  manga_title = ""
+  manga_title = ''
+  series = ''
+  link = 'https://www.mangaupdates.com/releases.html?search={}'.format(series)
   
   def __init__(self,title):
     self.title = title
     
 class OnePiece(Manga):
   def __init__(self,title):
-    self.manga_title = "One Piece"
+    self.manga_title = 'One Piece'
+    self.series = '33&stype=series'
     super().__init__(title)
 
 #variables for webbrowser, website link, reading webpage, and re
 chrome_loc = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
-link_01 = 'https://www.mangaupdates.com/releases.html?search=33&stype=series'
+#link_01 = 'https://www.mangaupdates.com/releases.html?search=33&stype=series'
 link_02 = 'https://www.mangaupdates.com/releases.html?search=1568&stype=series'
 page_01 = urllib.request.urlopen(link_01).read().decode('utf-8')
 page_02 = urllib.request.urlopen(link_02).read().decode('utf-8')
