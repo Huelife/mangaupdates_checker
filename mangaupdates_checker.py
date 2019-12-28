@@ -12,6 +12,11 @@ class Manga():
   
   def __init__(self,title):
     self.title = title
+    
+class OnePiece(Manga):
+  def __init__(self,title):
+    self.manga_title = "One Piece"
+    super().__init__(title)
 
 #variables for webbrowser, website link, reading webpage, and re
 chrome_loc = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
