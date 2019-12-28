@@ -20,11 +20,17 @@ class OnePiece(Manga):
     self.manga_title = 'One Piece'
     self.series = '33&stype=series'
     super().__init__(title)
+    
+class VinlandSaga(Manga):
+  def __init__(self,title):
+    self.manga_title = 'Vinland Saga'
+    self.series = '1568&stype=series'
+    super().__init__(title)
 
 #variables for webbrowser, website link, reading webpage, and re
 chrome_loc = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
 #link_01 = 'https://www.mangaupdates.com/releases.html?search=33&stype=series'
-link_02 = 'https://www.mangaupdates.com/releases.html?search=1568&stype=series'
+#link_02 = 'https://www.mangaupdates.com/releases.html?search=1568&stype=series'
 page_01 = urllib.request.urlopen(link_01).read().decode('utf-8')
 page_02 = urllib.request.urlopen(link_02).read().decode('utf-8')
 match_01 = re.findall("967<", page_01)
