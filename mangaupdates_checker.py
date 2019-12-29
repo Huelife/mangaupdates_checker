@@ -19,6 +19,26 @@ class Manga():
   def __init__(self,title):
     self.title = title
     
+  def verify_chapter(self):
+    if match is None or len(match) == 0:
+      print(self.title+':')
+      print('No new chapter...')
+      print('')    
+    else:
+      print(self.title+':')
+      try:
+        response = requests.get(link)
+        response.raise_for_status()
+      except HTTPError as http_err:
+        print(f'HTTP error occurred: {http_err}')
+      except Exception as err:
+        print(f'Other error occurred: {err}')
+      else:
+        print('New chapter is out!')
+        print('')
+        webbrowser.get(chrome_loc).open_new_tab(link)
+        #open link if no errors
+    
 class OnePiece(Manga):
   def __init__(self,title,series,chapter):
     self.manga_title = 'One Piece'
@@ -52,40 +72,40 @@ class VinlandSaga(Manga):
 #  }
 
 #if new chapter == True, attempt to open webpage
-for x in range(2):
-  if match[x] is None or len(match[x]) == 0:
-    if link[x] == link_01:
-      print('One Piece:')    
-    elif link[x] == link_02:
-      print('Vinland Saga:')
-    print('No new chapter...')
-    print('')
-  else:
-    if link[x] == link_01:
-      print('One Piece:')
-      try:
-        response = requests.get(link[x])
-        response.raise_for_status()
-      except HTTPError as http_err:
-        print(f'HTTP error occurred: {http_err}')
-      except Exception as err:
-        print(f'Other error occurred: {err}')
-      else:
-        print('New chapter is out!')
-        print('')
-        webbrowser.get(chrome_loc).open_new_tab(link[x])
+#for x in range(2):
+ # if match[x] is None or len(match[x]) == 0:
+  #  if link[x] == link_01:
+   #   print('One Piece:')    
+    #elif link[x] == link_02:
+    #  print('Vinland Saga:')
+    #print('No new chapter...')
+    #print('')
+  #else:
+#    if link[x] == link_01:
+ #     print('One Piece:')
+  #    try:
+   #     response = requests.get(link[x])
+    #    response.raise_for_status()
+     # except HTTPError as http_err:
+      #  print(f'HTTP error occurred: {http_err}')
+      #except Exception as err:
+ #       print(f'Other error occurred: {err}')
+  #    else:
+   #     print('New chapter is out!')
+    #    print('')
+     #   webbrowser.get(chrome_loc).open_new_tab(link[x])
         #open link if no errors
-    elif link[x] == link_02:
-      print('Vinland Saga:')
-      try:
-        response = requests.get(link[x])
-        response.raise_for_status()
-      except HTTPError as http_err:
-        print(f'HTTP error occurred: {http_err}')
-      except Exception as err:
-        print(f'Other error occurred: {err}')
-      else:
-        print('New chapter is out!')
-        print('')
-        webbrowser.get(chrome_loc).open_new_tab(link[x])
+ #   elif link[x] == link_02:
+  #    print('Vinland Saga:')
+   #   try:
+#        response = requests.get(link[x])
+ #       response.raise_for_status()
+  #    except HTTPError as http_err:
+   #     print(f'HTTP error occurred: {http_err}')
+    #  except Exception as err:
+     #   print(f'Other error occurred: {err}')
+#      else:
+ #       print('New chapter is out!')
+  #      print('')
+   #     webbrowser.get(chrome_loc).open_new_tab(link[x])
         #open link if no errors
