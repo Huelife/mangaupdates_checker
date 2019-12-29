@@ -23,11 +23,11 @@ class Manga():
   #if new chapter == True, attempt to open webpage  
   def verify_chapter(self):
     if match is None or len(match) == 0:
-      print(self.title+':')
+      print(manga_title+':')
       print('No new chapter...')
       print('')    
     else:
-      print(self.title+':')
+      print(manga_title+':')
       try:
         response = requests.get(link)
         response.raise_for_status()
