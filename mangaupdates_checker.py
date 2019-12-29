@@ -48,7 +48,7 @@ class OnePiece(Manga):
   def __init__(self,title,series,chapter):
     self.manga_title = 'One Piece'
     self.series = '33&stype=series'
-    self.chapter = '968'
+    self.chapter = '968<'
     super().__init__(title)
  
 #Vinland Saga manga, current chapter
@@ -56,5 +56,5 @@ class VinlandSaga(Manga):
   def __init__(self,title,series,chapter):
     self.manga_title = 'Vinland Saga'
     self.series = '1568&stype=series'
-    self.chapter = '169'
+    self.chapter = '169<'
     super().__init__(title)
