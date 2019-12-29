@@ -12,7 +12,7 @@ class Manga():
   def __init__(self,title):
     self.title = title
 
-#One Piece manga, current chapter
+#One Piece manga, new chapter
 class OnePiece(Manga):
   def __init__(self,title):
     self.manga_title = 'One Piece'
@@ -46,7 +46,7 @@ class OnePiece(Manga):
         webbrowser.get(self.chrome_loc).open_new_tab(self.link)
         #open link if no errors
  
-#Vinland Saga manga, current chapter
+#Vinland Saga manga, new chapter
 class VinlandSaga(Manga):
   def __init__(self,title):
     self.manga_title = 'Vinland Saga'
