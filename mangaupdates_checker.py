@@ -11,6 +11,7 @@ class Manga():
   manga_title = ''
   series = ''
   chapter = ''
+  chrome_loc = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
   link = 'https://www.mangaupdates.com/releases.html?search={}'.format(series)
   page = urllib.request.urlopen(link).read().decode('utf-8')
   match = re.findall(chapter, page)
@@ -33,7 +34,6 @@ class VinlandSaga(Manga):
     super().__init__(title)
 
 #variables for webbrowser, website link, reading webpage, and re
-chrome_loc = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
 #link_01 = 'https://www.mangaupdates.com/releases.html?search=33&stype=series'
 #link_02 = 'https://www.mangaupdates.com/releases.html?search=1568&stype=series'
 #page_01 = urllib.request.urlopen(link_01).read().decode('utf-8')
