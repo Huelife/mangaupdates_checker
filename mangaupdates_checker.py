@@ -3,6 +3,7 @@
 import webbrowser
 import urllib.request
 import re
+import time
 
 import requests
 from requests.exceptions import HTTPError
@@ -38,6 +39,7 @@ class Manga():
       else:
         print('New chapter is out!')
         print('')
+        time.sleep(1.5)
         webbrowser.get(chrome_loc).open_new_tab(link)
         #open link if no errors
 
