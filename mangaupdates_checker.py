@@ -18,8 +18,10 @@ class OnePiece(Manga):
     self.manga_title = 'One Piece'
     self.series = '33&stype=series'
     self.chapter = '968<'
-    self.chrome_loc = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
-    self.link = 'https://www.mangaupdates.com/releases.html?search={}'.format(self.series)
+    self.chrome_loc = ('C:/Program Files (x86)/Google/Chrome/Application/'
+                       'chrome.exe %s')
+    self.link = ('https://www.mangaupdates.com/releases.html?search={}'
+                 .format(self.series))
     self.page = urllib.request.urlopen(self.link).read().decode('utf-8')
     self.match = re.findall(self.chapter, self.page)
     super().__init__(title)
@@ -52,8 +54,10 @@ class VinlandSaga(Manga):
     self.manga_title = 'Vinland Saga'
     self.series = '1568&stype=series'
     self.chapter = '169<'
-    self.chrome_loc = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
-    self.link = 'https://www.mangaupdates.com/releases.html?search={}'.format(self.series)
+    self.chrome_loc = ('C:/Program Files (x86)/Google/Chrome/Application/'
+                       'chrome.exe %s')
+    self.link = ('https://www.mangaupdates.com/releases.html?search={}'
+                 .format(self.series))
     self.page = urllib.request.urlopen(self.link).read().decode('utf-8')
     self.match = re.findall(self.chapter, self.page)
     super().__init__(title)
