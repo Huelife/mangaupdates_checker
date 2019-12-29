@@ -26,14 +26,14 @@ class OnePiece(Manga):
     
   #if new chapter == True, attempt to open webpage  
   def verify_chapter(self):
-    if match is None or len(match) == 0:
-      print(manga_title+':')
+    if self.match is None or len(self.match) == 0:
+      print(self.manga_title+':')
       print('No new chapter...')
       print('')    
     else:
-      print(manga_title+':')
+      print(self.manga_title+':')
       try:
-        response = requests.get(link)
+        response = requests.get(self.link)
         response.raise_for_status()
       except HTTPError as http_err:
         print(f'HTTP error occurred: {http_err}')
@@ -43,7 +43,7 @@ class OnePiece(Manga):
         print('New chapter is out!')
         print('')
         time.sleep(1.5)
-        webbrowser.get(chrome_loc).open_new_tab(link)
+        webbrowser.get(self.chrome_loc).open_new_tab(self.link)
         #open link if no errors
  
 #Vinland Saga manga, current chapter
@@ -60,14 +60,14 @@ class VinlandSaga(Manga):
     
   #if new chapter == True, attempt to open webpage  
   def verify_chapter(self):
-    if match is None or len(match) == 0:
-      print(manga_title+':')
+    if self.match is None or len(self.match) == 0:
+      print(self.manga_title+':')
       print('No new chapter...')
       print('')    
     else:
-      print(manga_title+':')
+      print(self.manga_title+':')
       try:
-        response = requests.get(link)
+        response = requests.get(self.link)
         response.raise_for_status()
       except HTTPError as http_err:
         print(f'HTTP error occurred: {http_err}')
@@ -77,5 +77,5 @@ class VinlandSaga(Manga):
         print('New chapter is out!')
         print('')
         time.sleep(1.5)
-        webbrowser.get(chrome_loc).open_new_tab(link)
+        webbrowser.get(self.chrome_loc).open_new_tab(self.link)
         #open link if no errors
