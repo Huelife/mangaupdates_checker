@@ -10,23 +10,26 @@ from requests.exceptions import HTTPError
 class Manga():
   manga_title = ''
   series = ''
+  chapter = ''
   link = 'https://www.mangaupdates.com/releases.html?search={}'.format(series)
   page = urllib.request.urlopen(link).read().decode('utf-8')
-  match = re.findall("", page)
+  match = re.findall(chapter, page)
   
   def __init__(self,title):
     self.title = title
     
 class OnePiece(Manga):
-  def __init__(self,title):
+  def __init__(self,title,series,chapter):
     self.manga_title = 'One Piece'
     self.series = '33&stype=series'
+    self.chapter = '968'
     super().__init__(title)
     
 class VinlandSaga(Manga):
-  def __init__(self,title):
+  def __init__(self,title,series,chapter):
     self.manga_title = 'Vinland Saga'
     self.series = '1568&stype=series'
+    self.chapter = '169'
     super().__init__(title)
 
 #variables for webbrowser, website link, reading webpage, and re
