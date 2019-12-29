@@ -12,6 +12,7 @@ class Manga():
   series = ''
   link = 'https://www.mangaupdates.com/releases.html?search={}'.format(series)
   page = urllib.request.urlopen(link).read().decode('utf-8')
+  match = re.findall("", page)
   
   def __init__(self,title):
     self.title = title
@@ -34,8 +35,8 @@ chrome_loc = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
 #link_02 = 'https://www.mangaupdates.com/releases.html?search=1568&stype=series'
 #page_01 = urllib.request.urlopen(link_01).read().decode('utf-8')
 #page_02 = urllib.request.urlopen(link_02).read().decode('utf-8')
-match_01 = re.findall("967<", page_01)
-match_02 = re.findall("169<", page_02)
+#match_01 = re.findall("967<", page_01)
+#match_02 = re.findall("169<", page_02)
 
 #grouping multiple links and matches in tuples
 link = {
