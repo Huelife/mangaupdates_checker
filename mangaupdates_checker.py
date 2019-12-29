@@ -42,14 +42,14 @@ chrome_loc = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
 #match_02 = re.findall("169<", page_02)
 
 #grouping multiple links and matches in tuples
-link = {
-  0:link_01,
-  1:link_02,
-  }
-match = {
-  0:match_01,
-  1:match_02,
-  }
+#link = {
+#  0:link_01,
+#  1:link_02,
+#  }
+#match = {
+#  0:match_01,
+#  1:match_02,
+#  }
 
 #if new chapter == True, attempt to open webpage
 for x in range(2):
