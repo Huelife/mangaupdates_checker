@@ -13,10 +13,6 @@ class Manga():
   manga_title = ''
   series = ''
   chapter = ''
-  chrome_loc = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
-  link = 'https://www.mangaupdates.com/releases.html?search={}'.format(series)
-  page = urllib.request.urlopen(link).read().decode('utf-8')
-  match = re.findall(chapter, page)
   
   def __init__(self,title):
     self.title = title
@@ -49,6 +45,10 @@ class OnePiece(Manga):
     self.manga_title = 'One Piece'
     self.series = '33&stype=series'
     self.chapter = '968<'
+    chrome_loc = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+    link = 'https://www.mangaupdates.com/releases.html?search={}'.format(series)
+    page = urllib.request.urlopen(link).read().decode('utf-8')
+    match = re.findall(chapter, page)
     super().__init__(title)
  
 #Vinland Saga manga, current chapter
@@ -57,4 +57,8 @@ class VinlandSaga(Manga):
     self.manga_title = 'Vinland Saga'
     self.series = '1568&stype=series'
     self.chapter = '169<'
+    chrome_loc = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+    link = 'https://www.mangaupdates.com/releases.html?search={}'.format(series)
+    page = urllib.request.urlopen(link).read().decode('utf-8')
+    match = re.findall(chapter, page)
     super().__init__(title)
