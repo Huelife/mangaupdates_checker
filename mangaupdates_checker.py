@@ -9,11 +9,6 @@ import requests
 from requests.exceptions import HTTPError
 
 class Manga():
-  #master variables
-  manga_title = ''
-  series = ''
-  chapter = ''
-  
   def __init__(self,title):
     self.title = title
     
