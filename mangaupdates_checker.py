@@ -191,3 +191,16 @@ class Berserk(Manga):
         time.sleep(1.5)
         webbrowser.get(self.chrome_loc).open_new_tab(self.link)
         #open link if no errors
+        
+#grouping all manga titles together                
+manga_tuple = {
+  0:OnePiece('').verify_chapter(),
+  1:VinlandSaga('').verify_chapter(),
+  2:DGrayman('').verify_chapter(), 
+  3:OnePunchMan('').verify_chapter(),
+  4:Berserk('').verify_chapter(),
+  }
+
+#checking each manga titles for new chapters
+for new in range(5):
+  manga_tuple[new]
