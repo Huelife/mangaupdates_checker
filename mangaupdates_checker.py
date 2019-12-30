@@ -8,11 +8,12 @@ import time
 import requests
 from requests.exceptions import HTTPError
 
+#Manga superclass
 class Manga():
   def __init__(self,title):
     self.title = title
 
-#One Piece manga, new chapter
+#One Piece manga subclass, new chapter
 class OnePiece(Manga):
   def __init__(self,title):
     self.manga_title = 'One Piece'
@@ -48,7 +49,7 @@ class OnePiece(Manga):
         webbrowser.get(self.chrome_loc).open_new_tab(self.link)
         #open link if no errors
  
-#Vinland Saga manga, new chapter
+#Vinland Saga manga subclass, new chapter
 class VinlandSaga(Manga):
   def __init__(self,title):
     self.manga_title = 'Vinland Saga'
@@ -84,7 +85,7 @@ class VinlandSaga(Manga):
         webbrowser.get(self.chrome_loc).open_new_tab(self.link)
         #open link if no errors
 
-#D.Gray-man manga, new chapter
+#D.Gray-man manga subclass, new chapter
 class DGrayman(Manga):
   def __init__(self,title):
     self.manga_title = 'D.Gray-man'
@@ -120,7 +121,7 @@ class DGrayman(Manga):
         webbrowser.get(self.chrome_loc).open_new_tab(self.link)
         #open link if no errors
 
-#One Punch-Man manga, new chapter
+#One Punch-Man manga subclass, new chapter
 class OnePunchMan(Manga):
   def __init__(self,title):
     self.manga_title = 'One Punch-Man'
@@ -156,7 +157,7 @@ class OnePunchMan(Manga):
         webbrowser.get(self.chrome_loc).open_new_tab(self.link)
         #open link if no errors
         
-#Berserk manga, new chapter
+#Berserk manga subclass, new chapter
 class Berserk(Manga):
   def __init__(self,title):
     self.manga_title = 'Berserk'
