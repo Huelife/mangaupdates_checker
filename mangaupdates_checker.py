@@ -12,6 +12,28 @@ from requests.exceptions import HTTPError
 class Manga():
   def __init__(self,title):
     self.title = title
+    
+  #if new chapter == True, attempt to open webpage  
+  def verify_chapter(self):
+    if self.match is None or len(self.match) == 0:
+      print(self.manga_title+':')
+      print('No new chapter...')
+      print('')    
+    else:
+      print(self.manga_title+':')
+      try:
+        response = requests.get(self.link)
+        response.raise_for_status()
+      except HTTPError as http_err:
+        print(f'HTTP error occurred: {http_err}')
+      except Exception as err:
+        print(f'Other error occurred: {err}')
+      else:
+        print('New chapter is out!')
+        print('')
+        time.sleep(1.5)
+        webbrowser.get(self.chrome_loc).open_new_tab(self.link)
+        #open link if no errors
 
 #One Piece manga subclass, new chapter
 class OnePiece(Manga):
@@ -27,28 +49,6 @@ class OnePiece(Manga):
     self.match = re.findall(self.chapter, self.page)
     super().__init__(title)
     
-  #if new chapter == True, attempt to open webpage  
-  def verify_chapter(self):
-    if self.match is None or len(self.match) == 0:
-      print(self.manga_title+':')
-      print('No new chapter...')
-      print('')    
-    else:
-      print(self.manga_title+':')
-      try:
-        response = requests.get(self.link)
-        response.raise_for_status()
-      except HTTPError as http_err:
-        print(f'HTTP error occurred: {http_err}')
-      except Exception as err:
-        print(f'Other error occurred: {err}')
-      else:
-        print('New chapter is out!')
-        print('')
-        time.sleep(1.5)
-        webbrowser.get(self.chrome_loc).open_new_tab(self.link)
-        #open link if no errors
- 
 #Vinland Saga manga subclass, new chapter
 class VinlandSaga(Manga):
   def __init__(self,title):
@@ -62,28 +62,6 @@ class VinlandSaga(Manga):
     self.page = urllib.request.urlopen(self.link).read().decode('utf-8')
     self.match = re.findall(self.chapter, self.page)
     super().__init__(title)
-    
-  #if new chapter == True, attempt to open webpage  
-  def verify_chapter(self):
-    if self.match is None or len(self.match) == 0:
-      print(self.manga_title+':')
-      print('No new chapter...')
-      print('')    
-    else:
-      print(self.manga_title+':')
-      try:
-        response = requests.get(self.link)
-        response.raise_for_status()
-      except HTTPError as http_err:
-        print(f'HTTP error occurred: {http_err}')
-      except Exception as err:
-        print(f'Other error occurred: {err}')
-      else:
-        print('New chapter is out!')
-        print('')
-        time.sleep(1.5)
-        webbrowser.get(self.chrome_loc).open_new_tab(self.link)
-        #open link if no errors
 
 #D.Gray-man manga subclass, new chapter
 class DGrayman(Manga):
@@ -99,28 +77,6 @@ class DGrayman(Manga):
     self.match = re.findall(self.chapter, self.page)
     super().__init__(title)
 
-  #if new chapter == True, attempt to open webpage  
-  def verify_chapter(self):
-    if self.match is None or len(self.match) == 0:
-      print(self.manga_title+':')
-      print('No new chapter...')
-      print('')    
-    else:
-      print(self.manga_title+':')
-      try:
-        response = requests.get(self.link)
-        response.raise_for_status()
-      except HTTPError as http_err:
-        print(f'HTTP error occurred: {http_err}')
-      except Exception as err:
-        print(f'Other error occurred: {err}')
-      else:
-        print('New chapter is out!')
-        print('')
-        time.sleep(1.5)
-        webbrowser.get(self.chrome_loc).open_new_tab(self.link)
-        #open link if no errors
-
 #One Punch-Man manga subclass, new chapter
 class OnePunchMan(Manga):
   def __init__(self,title):
@@ -134,28 +90,6 @@ class OnePunchMan(Manga):
     self.page = urllib.request.urlopen(self.link).read().decode('utf-8')
     self.match = re.findall(self.chapter, self.page)
     super().__init__(title)
-
-  #if new chapter == True, attempt to open webpage  
-  def verify_chapter(self):
-    if self.match is None or len(self.match) == 0:
-      print(self.manga_title+':')
-      print('No new chapter...')
-      print('')    
-    else:
-      print(self.manga_title+':')
-      try:
-        response = requests.get(self.link)
-        response.raise_for_status()
-      except HTTPError as http_err:
-        print(f'HTTP error occurred: {http_err}')
-      except Exception as err:
-        print(f'Other error occurred: {err}')
-      else:
-        print('New chapter is out!')
-        print('')
-        time.sleep(1.5)
-        webbrowser.get(self.chrome_loc).open_new_tab(self.link)
-        #open link if no errors
         
 #Berserk manga subclass, new chapter
 class Berserk(Manga):
@@ -170,28 +104,6 @@ class Berserk(Manga):
     self.page = urllib.request.urlopen(self.link).read().decode('utf-8')
     self.match = re.findall(self.chapter, self.page)
     super().__init__(title)
-
-  #if new chapter == True, attempt to open webpage  
-  def verify_chapter(self):
-    if self.match is None or len(self.match) == 0:
-      print(self.manga_title+':')
-      print('No new chapter...')
-      print('')    
-    else:
-      print(self.manga_title+':')
-      try:
-        response = requests.get(self.link)
-        response.raise_for_status()
-      except HTTPError as http_err:
-        print(f'HTTP error occurred: {http_err}')
-      except Exception as err:
-        print(f'Other error occurred: {err}')
-      else:
-        print('New chapter is out!')
-        print('')
-        time.sleep(1.5)
-        webbrowser.get(self.chrome_loc).open_new_tab(self.link)
-        #open link if no errors
         
 #grouping all manga titles together                
 manga_tuple = {
