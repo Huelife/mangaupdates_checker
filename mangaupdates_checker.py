@@ -10,6 +10,8 @@ from requests.exceptions import HTTPError
 
 #Manga superclass
 class Manga():
+  manga_title = ''
+  
   def __init__(self,title):
     self.title = title
     self.chrome_loc = ('C:/Program Files (x86)/Google/Chrome/Application/'
