@@ -12,6 +12,12 @@ from requests.exceptions import HTTPError
 class Manga():
   def __init__(self,title):
     self.title = title
+    self.chrome_loc = ('C:/Program Files (x86)/Google/Chrome/Application/'
+                       'chrome.exe %s')
+    self.link = ('https://www.mangaupdates.com/releases.html?search={}'
+                 .format(self.series))
+    self.page = urllib.request.urlopen(self.link).read().decode('utf-8')
+    self.match = re.findall(self.chapter, self.page)
     
   #if new chapter == True, attempt to open webpage  
   def verify_chapter(self):
@@ -40,13 +46,7 @@ class OnePiece(Manga):
   def __init__(self,title):
     self.manga_title = 'One Piece'
     self.series = '33&stype=series'
-    self.chapter = '968<'
-    self.chrome_loc = ('C:/Program Files (x86)/Google/Chrome/Application/'
-                       'chrome.exe %s')
-    self.link = ('https://www.mangaupdates.com/releases.html?search={}'
-                 .format(self.series))
-    self.page = urllib.request.urlopen(self.link).read().decode('utf-8')
-    self.match = re.findall(self.chapter, self.page)
+    self.chapter = '968<'    
     super().__init__(title)
     
 #Vinland Saga manga subclass, new chapter
@@ -55,12 +55,6 @@ class VinlandSaga(Manga):
     self.manga_title = 'Vinland Saga'
     self.series = '1568&stype=series'
     self.chapter = '169<'
-    self.chrome_loc = ('C:/Program Files (x86)/Google/Chrome/Application/'
-                       'chrome.exe %s')
-    self.link = ('https://www.mangaupdates.com/releases.html?search={}'
-                 .format(self.series))
-    self.page = urllib.request.urlopen(self.link).read().decode('utf-8')
-    self.match = re.findall(self.chapter, self.page)
     super().__init__(title)
 
 #D.Gray-man manga subclass, new chapter
@@ -69,12 +63,6 @@ class DGrayman(Manga):
     self.manga_title = 'D.Gray-man'
     self.series = '95&stype=series'
     self.chapter = '235<'
-    self.chrome_loc = ('C:/Program Files (x86)/Google/Chrome/Application/'
-                       'chrome.exe %s')
-    self.link = ('https://www.mangaupdates.com/releases.html?search={}'
-                 .format(self.series))
-    self.page = urllib.request.urlopen(self.link).read().decode('utf-8')
-    self.match = re.findall(self.chapter, self.page)
     super().__init__(title)
 
 #One Punch-Man manga subclass, new chapter
@@ -83,12 +71,6 @@ class OnePunchMan(Manga):
     self.manga_title = 'One Punch-Man'
     self.series = '80345&stype=series'
     self.chapter = '125<'
-    self.chrome_loc = ('C:/Program Files (x86)/Google/Chrome/Application/'
-                       'chrome.exe %s')
-    self.link = ('https://www.mangaupdates.com/releases.html?search={}'
-                 .format(self.series))
-    self.page = urllib.request.urlopen(self.link).read().decode('utf-8')
-    self.match = re.findall(self.chapter, self.page)
     super().__init__(title)
         
 #Berserk manga subclass, new chapter
@@ -97,12 +79,6 @@ class Berserk(Manga):
     self.manga_title = 'Berserk'
     self.series = '88&stype=series'
     self.chapter = '360<'
-    self.chrome_loc = ('C:/Program Files (x86)/Google/Chrome/Application/'
-                       'chrome.exe %s')
-    self.link = ('https://www.mangaupdates.com/releases.html?search={}'
-                 .format(self.series))
-    self.page = urllib.request.urlopen(self.link).read().decode('utf-8')
-    self.match = re.findall(self.chapter, self.page)
     super().__init__(title)
         
 #grouping all manga titles together                
