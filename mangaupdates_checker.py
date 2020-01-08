@@ -86,11 +86,11 @@ class Berserk(Manga):
         
 #grouping all manga titles together                
 manga_tuple = {
-  0:OnePiece('').verify_chapter(),
-  1:VinlandSaga('').verify_chapter(),
-  2:DGrayman('').verify_chapter(), 
-  3:OnePunchMan('').verify_chapter(),
-  4:Berserk('').verify_chapter(),
+  0:OnePiece('','','','','').verify_chapter(),
+  1:VinlandSaga('','','','','').verify_chapter(),
+  2:DGrayman('','','','','').verify_chapter(), 
+  3:OnePunchMan('','','','','').verify_chapter(),
+  4:Berserk('','','','','').verify_chapter(),
   }
 
 #checking each manga titles for new chapters
