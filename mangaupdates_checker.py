@@ -13,7 +13,7 @@ class Manga():
   manga_title = ''
   
   #creating shared variables for subclasses
-  def __init__(self,title):
+  def __init__(self,title,chrome_loc,link,page,match):
     self.title = title
     self.chrome_loc = ('C:/Program Files (x86)/Google/Chrome/Application/'
                        'chrome.exe %s')
@@ -46,7 +46,7 @@ class Manga():
 
 #One Piece manga subclass, new chapter
 class OnePiece(Manga):
-  def __init__(self,title):
+  def __init__(self,title,chrome_loc,link,page,match):
     self.manga_title = 'One Piece'
     self.series = '33&stype=series'
     self.chapter = '968<'    
@@ -54,7 +54,7 @@ class OnePiece(Manga):
     
 #Vinland Saga manga subclass, new chapter
 class VinlandSaga(Manga):
-  def __init__(self,title):
+  def __init__(self,title,chrome_loc,link,page,match):
     self.manga_title = 'Vinland Saga'
     self.series = '1568&stype=series'
     self.chapter = '169<'
@@ -62,7 +62,7 @@ class VinlandSaga(Manga):
 
 #D.Gray-man manga subclass, new chapter
 class DGrayman(Manga):
-  def __init__(self,title):
+  def __init__(self,title,chrome_loc,link,page,match):
     self.manga_title = 'D.Gray-man'
     self.series = '95&stype=series'
     self.chapter = '235<'
@@ -70,7 +70,7 @@ class DGrayman(Manga):
 
 #One Punch-Man manga subclass, new chapter
 class OnePunchMan(Manga):
-  def __init__(self,title):
+  def __init__(self,title,chrome_loc,link,page,match):
     self.manga_title = 'One Punch-Man'
     self.series = '80345&stype=series'
     self.chapter = '125<'
@@ -78,7 +78,7 @@ class OnePunchMan(Manga):
         
 #Berserk manga subclass, new chapter
 class Berserk(Manga):
-  def __init__(self,title):
+  def __init__(self,title,chrome_loc,link,page,match):
     self.manga_title = 'Berserk'
     self.series = '88&stype=series'
     self.chapter = '360<'
