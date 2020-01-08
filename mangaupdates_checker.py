@@ -50,7 +50,7 @@ class OnePiece(Manga):
     self.manga_title = 'One Piece'
     self.series = '33&stype=series'
     self.chapter = '968<'    
-    super().__init__(title)
+    super().__init__(title,chrome_loc,link,page,match)
     
 #Vinland Saga manga subclass, new chapter
 class VinlandSaga(Manga):
@@ -58,7 +58,7 @@ class VinlandSaga(Manga):
     self.manga_title = 'Vinland Saga'
     self.series = '1568&stype=series'
     self.chapter = '169<'
-    super().__init__(title)
+    super().__init__(title,chrome_loc,link,page,match)
 
 #D.Gray-man manga subclass, new chapter
 class DGrayman(Manga):
@@ -66,7 +66,7 @@ class DGrayman(Manga):
     self.manga_title = 'D.Gray-man'
     self.series = '95&stype=series'
     self.chapter = '235<'
-    super().__init__(title)
+    super().__init__(title,chrome_loc,link,page,match)
 
 #One Punch-Man manga subclass, new chapter
 class OnePunchMan(Manga):
@@ -74,7 +74,7 @@ class OnePunchMan(Manga):
     self.manga_title = 'One Punch-Man'
     self.series = '80345&stype=series'
     self.chapter = '125<'
-    super().__init__(title)
+    super().__init__(title,chrome_loc,link,page,match)
         
 #Berserk manga subclass, new chapter
 class Berserk(Manga):
@@ -82,7 +82,7 @@ class Berserk(Manga):
     self.manga_title = 'Berserk'
     self.series = '88&stype=series'
     self.chapter = '360<'
-    super().__init__(title)
+    super().__init__(title,chrome_loc,link,page,match)
         
 #grouping all manga titles together                
 manga_tuple = {
